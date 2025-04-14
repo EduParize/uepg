@@ -1,276 +1,210 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
+
 /*
+Lista 6.1
 Autor: Eduardo Parize
 RA: 25075923
-Lista 5
 */
-int main(){
-// Exercicio 1:
+
+int main()
+{
+//Exercicio 1:
 /*
-   int i;
-    printf("Digite um numero maior que 20:\n");
-    scanf("%d", &i);
-        if (i>20){
-            printf("O numero %d eh maior que 20", i);
+float num1, num2, num3;
+int opcao;
+float geometrica, ponderada, harmonica, aritmetica;
+
+printf("Insira o valor do primeiro numero: \n");
+scanf("%f", &num1);
+printf("Insira o valor do segundo numero: \n");
+scanf("%f", &num2);
+printf("Insira o valor do terceiro numero: \n");
+scanf("%f", &num3);
+
+printf("------------\n1- Media geometrica\n2- Media ponderada\n3- Media harmonica\n4- Media aritmetica\n\nEscolha uma opcao:\n------------\n");
+scanf("%d", &opcao);
+
+switch(opcao){
+case 1:
+    geometrica = cbrt(num1*num2*num3);
+    printf("%.2f", geometrica);
+    break;
+case 2:
+    ponderada= (num1+2*num2+3*num3)/6;
+    printf("%.2f", ponderada);
+    break;
+case 3:
+    harmonica= 1/((1/num1)+(1/num2)+(1/num3));
+    printf("%.2f", harmonica);
+    break;
+case 4:
+    aritmetica= (num1+num2+num3)/3;
+    printf("%.2f", aritmetica);
+    break;
 }
 */
-// Exercicio 2:
+//Exercicio 2:
 /*
-    int num1, num2, soma;
-    printf("Insira o valor do primeiro numero:\n");
-    scanf("%d", &num1);
-    printf("Insira o valor do segundo numero:\n");
-    scanf("%d", &num2);
+int i;
+printf("Insira um numero: \n");
+scanf("%d", &i);
 
-    soma = num1+num2;
-    if(soma>10){
-        printf("O numero %d eh maior que 10!", soma);
-    }
-*/
-// Exercicio 3:
-/*
-  int i;
-    printf("Insira um numero:\n");
-    scanf("%d", &i);
-
-    if(i%2==0){
-        printf("O numero eh par");
-    } else {
-        printf("O numero eh impar");
-        }
-*/
-// Exercicio 4:
-/*
-    int i;
-    printf("Insira um numero:\n");
-    scanf("%d", &i);
-
-    if(i>0){
-        printf("O numero eh positivo\n");
-    } else if(i==0){
-            printf("O numero eh nulo\n");
-            }else{
-            printf("O numero eh negativo\n");}
-*/
-// Exercicio 5:
-/*    int num1, num2, soma;
-    printf("Insira o valor do primeiro numero:\n");
-    scanf("%d", &num1);
-    printf("Insira o valor do segundo numero:\n");
-    scanf("%d", &num2);
-
-    soma = num1+num2;
-
-    if(soma>20){
-        printf("%d", soma+8);
-    }else{
-            printf("%d", soma-5);}
-*/
-//Exercicio 6:
-/*
-    float i, raiz, quadrado;
-
-    printf("Insira um numero:\n");
-    scanf("%f", &i);
-    raiz = sqrt(i);
-    quadrado=i*i;
-    if(i>=0){
-        printf("%.2f", raiz);
-    }else{
-        printf("%.2f",quadrado);
-        }
-*/
-//Exercicio 7:
-/*
-    float i, j;
-    printf("Insira o valor para o primeiro numero:\n");
-    scanf("%f", &i);
-    printf("Insira o valor para o segundo numero:\n");
-    scanf("%f", &j);
-
-    if(i>j){
-        printf("O maior numero eh o : %.2f\n", i);
-        printf("O menor numero eh o : %.2f\n", j);
-    } else{
-            printf("O maior numero eh o : %.2f\n", j);
-            printf("O menor numero eh o : %.2f\n", i);
-    }
-*/
-//Exercicio 8:
-/*
-    int a, b;
-    printf("Insira o valor para o primeiro numero:\n");
-    scanf("%d", &a);
-    printf("Insira o valor para o segundo numero:\n");
-    scanf("%d", &b);
-
-    if(a%b==0){
-        printf("O numero %d eh divisivel pelo numero %d", a, b);
-    } else{
-           printf("O numero %d nao eh divisivel pelo numero %d", a, b); }
-*/
-//Exercicio 9:
-/*
-    int i;
-    printf("Insira um numero:\n");
-    scanf("%d", &i);
-
-    if(i%3==0){
-       printf("O numero %d eh multiplo de 3\n", i);
-    } else{
-            printf("O numero %d nao eh multiplo de 3\n", i);}
-*/
-//Exercicio 10:
-/*
-    int i;
-    printf("Insira um numero:\n");
-    scanf("%d", &i);
-
-    if(i%5==0){
-       printf("O numero %d eh divisivel por 5\n", i);
-    } else{
-            printf("O numero %d nao eh divisivel por 5\n", i);
-    }
-    */
-//Exercicio 11:
-/*
-    int i;
-    printf("Insira um numero:\n");
-    scanf("%d", &i);
-
-    if(i%7==0 && i%3==0){
-       printf("O numero %d eh divisivel por 7 e por 3\n", i);
-    } else{
-            printf("O numero %d nao eh divisivel por 7 e por 3\n", i);
-    }
-*/
-//Exercicio 12:
-/*
-    int i;
-    printf("Insira um numero:\n");
-    scanf("%d", &i);
-
-    if(i%10==0){
-        printf("O numero %d eh divisivel por 10\n", i);
-    }
-    if (i%5==0){
-        printf("O numero %d eh divisivel por 5\n", i);
-    }
-    if (i%2==0){
-        printf("O numero %d eh divisivel por 2\n", i);
-    }
-    if(i%2!=0 && i%5!=0 && i%10!=0){
-        printf("O numero %d nao eh divisivel por 10, por 5 nem por 2\n", i);
-    }
-*/
-//Exercicio 13:
-/*
-    float salario_bruto, prestacao;
-    printf("Insira o valor do salario bruto:\n");
-    scanf("%f", &salario_bruto);
-    printf("Insira o valor da prestacao:\n");
-    scanf("%f", &prestacao);
-
-    if(prestacao<=salario_bruto*0.3){
-        printf("O emprestimo pode ser concedido\n");
-    } else{
-        printf("O emprestimo nao pode ser concedido\n");
-    }
-*/
-/*
-//Exercicio 14:
-    float A, B, C, D, maior_numero, menor_numero;
-    printf("Insira o valor do primeiro numero: \n");
-    scanf("%f", &A);
-    printf("Insira o valor do segundo numero: \n");
-    scanf("%f", &B);
-    printf("Insira o valor do terceiro numero: \n");
-    scanf("%f", &C);
-    printf("Insira o valor do quarto numero: \n");
-    scanf("%f", &D);
-    //Descobrir maior numero
-    if(A>B){
-        if(A>C){
-            if(A>D){
-                maior_numero = A;
-            }else{
-                maior_numero = D;}
-        }else if(C>D){
-                maior_numero=C;
-                    }else{
-                    maior_numero=D;}
-    }else if(B>C){
-            if(B>D){
-                maior_numero=B;
-            }else{
-                maior_numero=D;}
-                    } else if(C>D){
-                    maior_numero=C;
-                        }else{
-                            maior_numero=D;}
-
-    //Descobrir menor numero
-    if(A<B){
-        if(A<C){
-            if(A<D){
-                menor_numero = A;
-            }else{
-                menor_numero = D;}
-        }else if(C<D){
-                menor_numero=C;
-                    }else{
-                    menor_numero=D;}
-    }else if(B<C){
-            if(B<D){
-                menor_numero=B;
-            }else{
-                menor_numero=D;}
-                    } else if(C<D){
-                    menor_numero=C;
-                        }else{
-                            menor_numero=D;}
-
-printf("O maior numero eh: %.2f\n", maior_numero);
-printf("O menor numero eh: %.2f\n", menor_numero);
-*/
-//Exercicio 15:
-    float A, B, C, maior_numero, menor_numero, numero_meio;
-    printf("Insira o valor do primeiro numero: \n");
-    scanf("%f", &A);
-    printf("Insira o valor do segundo numero: \n");
-    scanf("%f", &B);
-    printf("Insira o valor do terceiro numero: \n");
-    scanf("%f", &C);
-
-    if(A>B){
-        if(A>C){
-            maior_numero=A;
-            if(B>C){
-                numero_meio=B;
-                menor_numero=C;
-            }else{
-                numero_meio=C;
-                menor_numero=B;
-            }
-        }else{
-            maior_numero=C;
-            numero_meio=A;
-            menor_numero=B;}
-    }else if(A>C){
-        menor_numero=C;
-        numero_meio=A;
-        maior_numero=B;
-        }else if(C>B){
-        menor_numero=A;
-        numero_meio=B;
-        maior_numero=C;
-        }else{
-        menor_numero=A;
-        numero_meio=C;
-        maior_numero=B;
-        }
-printf("%f %f %f", menor_numero, numero_meio, maior_numero);
-    return 0;
+switch(i){
+case 1:
+    printf("Domingo\n");
+    break;
+case 2:
+    printf("Segunda-feira\n");
+    break;
+case 3:
+    printf("Terca-feira\n");
+    break;
+case 4:
+    printf("Quarta-feira\n");
+    break;
+case 5:
+    printf("Quinta-feira\n");
+    break;
+case 6:
+    printf("Sexta-feira\n");
+    break;
+case 7:
+    printf("Sabado\n");
+    break;
+default:
+    printf("Numero invalido");
+    break;
 }
+*/
+//Exercicio 3:
+/*
+int opcao;
+float i, j, resultado;
+printf("---------------");
+printf("Escolha uma opcao:\n");
+printf("1- Soma\n");
+printf("2- Substracao\n");
+printf("3- Multiplicacao\n");
+printf("4- Divisao\n");
+printf("---------------\n");
+scanf("%d", &opcao);
+
+printf("Insira o valor do primeiro numero: \n");
+scanf("%f", &i);
+printf("Insira o valor do segundo numero: \n");
+scanf("%f", &j);
+
+switch(opcao){
+case 1:
+    resultado= i+j;
+    printf("Resultado: %.2f\n", resultado);
+    break;
+case 2:
+    resultado= i-j;
+    printf("Resultado: %.2f\n", resultado);
+    break;
+case 3:
+    resultado= i*j;
+    printf("Resultado: %.2f\n", resultado);
+    break;
+case 4:
+    resultado= i/j;
+    printf("Resultado: %.2f\n", resultado);
+    break;
+default:
+    printf("Insira um numero valido:\n");
+    break;
+}
+*/
+//Exercicio 4:
+/*
+float valor, preco_final;
+char estado;
+
+printf("Insira o valor do produto:\n");
+scanf("%f", &valor);
+fflush(stdin);
+
+printf("------------\n");
+printf("MG - m\n");
+printf("SP - s\n");
+printf("RJ - r\n");
+printf("MS - n\n");
+printf("------------\n");
+printf("Insira estado:\n");
+scanf("%c", &estado);
+
+switch(estado){
+case 'm':
+    preco_final= valor*1.07;
+    break;
+case 's':
+    preco_final= valor*1.12;
+    break;
+case 'r':
+    preco_final= valor*1.15;
+    break;
+case 'n':
+    preco_final= valor*1.08;
+    break;
+default:
+    printf("Erro!\n");
+    break;
+}
+printf("Valor final: %.2f", preco_final);
+*/
+//Exercicio 5:
+/*
+int i;
+printf("Insira um numero: \n");
+scanf("%d", &i);
+
+switch(i){
+case 1:
+    printf("Janeiro\n");
+    break;
+case 2:
+    printf("Fevereiro\n");
+    break;
+case 3:
+    printf("Marco\n");
+    break;
+case 4:
+    printf("Abril\n");
+    break;
+case 5:
+    printf("Maio\n");
+    break;
+case 6:
+    printf("Junho\n");
+    break;
+case 7:
+    printf("Julho\n");
+    break;
+case 8:
+    printf("Agosto\n");
+    break;
+case 9:
+    printf("Setembro\n");
+    break;
+case 10:
+    printf("Outubro\n");
+    break;
+case 11:
+    printf("Novembro\n");
+    break;
+case 12:
+    printf("Dezembro\n");
+    break;
+default:
+    printf("Numero invalido!\n");
+}
+*/
+}
+
+
+
+
