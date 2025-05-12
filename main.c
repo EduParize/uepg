@@ -1,210 +1,146 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
-
 /*
-Lista 6.1
 Autor: Eduardo Parize
+Lista: 9
 RA: 25075923
 */
-
 int main()
 {
 //Exercicio 1:
 /*
-float num1, num2, num3;
-int opcao;
-float geometrica, ponderada, harmonica, aritmetica;
-
-printf("Insira o valor do primeiro numero: \n");
-scanf("%f", &num1);
-printf("Insira o valor do segundo numero: \n");
-scanf("%f", &num2);
-printf("Insira o valor do terceiro numero: \n");
-scanf("%f", &num3);
-
-printf("------------\n1- Media geometrica\n2- Media ponderada\n3- Media harmonica\n4- Media aritmetica\n\nEscolha uma opcao:\n------------\n");
-scanf("%d", &opcao);
-
-switch(opcao){
-case 1:
-    geometrica = cbrt(num1*num2*num3);
-    printf("%.2f", geometrica);
-    break;
-case 2:
-    ponderada= (num1+2*num2+3*num3)/6;
-    printf("%.2f", ponderada);
-    break;
-case 3:
-    harmonica= 1/((1/num1)+(1/num2)+(1/num3));
-    printf("%.2f", harmonica);
-    break;
-case 4:
-    aritmetica= (num1+num2+num3)/3;
-    printf("%.2f", aritmetica);
-    break;
-}
+    int i=0, soma=0;
+    do{
+        i+=2;
+        soma=soma+i;
+    }while(i<100);
+    printf("a soma dos primeiros 50 numeros pares eh: %d", soma);
 */
 //Exercicio 2:
 /*
-int i;
-printf("Insira um numero: \n");
-scanf("%d", &i);
-
-switch(i){
-case 1:
-    printf("Domingo\n");
-    break;
-case 2:
-    printf("Segunda-feira\n");
-    break;
-case 3:
-    printf("Terca-feira\n");
-    break;
-case 4:
-    printf("Quarta-feira\n");
-    break;
-case 5:
-    printf("Quinta-feira\n");
-    break;
-case 6:
-    printf("Sexta-feira\n");
-    break;
-case 7:
-    printf("Sabado\n");
-    break;
-default:
-    printf("Numero invalido");
-    break;
-}
+    int i=10;
+    do{
+        printf("%d\n", i);
+        i--;
+    }while(i>=0);
+    printf("FIM!\n");
 */
 //Exercicio 3:
 /*
-int opcao;
-float i, j, resultado;
-printf("---------------");
-printf("Escolha uma opcao:\n");
-printf("1- Soma\n");
-printf("2- Substracao\n");
-printf("3- Multiplicacao\n");
-printf("4- Divisao\n");
-printf("---------------\n");
-scanf("%d", &opcao);
+    int i, j=1, soma=0;
+    printf("Insira o valor de um inteiro: \n");
+    scanf("%d", &i);
 
-printf("Insira o valor do primeiro numero: \n");
-scanf("%f", &i);
-printf("Insira o valor do segundo numero: \n");
-scanf("%f", &j);
-
-switch(opcao){
-case 1:
-    resultado= i+j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 2:
-    resultado= i-j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 3:
-    resultado= i*j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 4:
-    resultado= i/j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-default:
-    printf("Insira um numero valido:\n");
-    break;
-}
+    do{
+        if(i%j==0){
+           soma=soma+j;
+        }
+        j++;
+    }while(j<i);
+    printf("A soma eh: %d", soma);
 */
 //Exercicio 4:
 /*
-float valor, preco_final;
-char estado;
+    int linhas, nmr=1, j=1, cont=0;
+    printf("Insira a quantidade de linhas: \n");
+    scanf("%d", &linhas);
 
-printf("Insira o valor do produto:\n");
-scanf("%f", &valor);
-fflush(stdin);
-
-printf("------------\n");
-printf("MG - m\n");
-printf("SP - s\n");
-printf("RJ - r\n");
-printf("MS - n\n");
-printf("------------\n");
-printf("Insira estado:\n");
-scanf("%c", &estado);
-
-switch(estado){
-case 'm':
-    preco_final= valor*1.07;
-    break;
-case 's':
-    preco_final= valor*1.12;
-    break;
-case 'r':
-    preco_final= valor*1.15;
-    break;
-case 'n':
-    preco_final= valor*1.08;
-    break;
-default:
-    printf("Erro!\n");
-    break;
-}
-printf("Valor final: %.2f", preco_final);
+    do{
+        while(cont<=j){
+            if(cont==j){
+                 printf("\n");
+                 cont++;
+                }else{
+                    printf("%d ", nmr);
+                    cont++;
+                    nmr++;
+                    }
+    }
+    cont=0;
+    j++;
+    }while(j<=linhas);
 */
 //Exercicio 5:
 /*
-int i;
-printf("Insira um numero: \n");
-scanf("%d", &i);
+    int i, dia, mes, ano, preco, quantidade, resultado=0;
 
-switch(i){
-case 1:
-    printf("Janeiro\n");
-    break;
-case 2:
-    printf("Fevereiro\n");
-    break;
-case 3:
-    printf("Marco\n");
-    break;
-case 4:
-    printf("Abril\n");
-    break;
-case 5:
-    printf("Maio\n");
-    break;
-case 6:
-    printf("Junho\n");
-    break;
-case 7:
-    printf("Julho\n");
-    break;
-case 8:
-    printf("Agosto\n");
-    break;
-case 9:
-    printf("Setembro\n");
-    break;
-case 10:
-    printf("Outubro\n");
-    break;
-case 11:
-    printf("Novembro\n");
-    break;
-case 12:
-    printf("Dezembro\n");
-    break;
-default:
-    printf("Numero invalido!\n");
-}
+    do{
+        printf("Insira o numero do pedido: \n");
+        scanf("%d", &i);
+            if(i==0){
+                break;
+            }
+        printf("Insira o dia do pedido: \n");
+        scanf("%d", &dia);
+        printf("Insira o mes do pedido: \n");
+        scanf("%d", &mes);
+        printf("Insira o ano do pedido: \n");
+        scanf("%d", &ano);
+
+        printf("Insira o preco do pedido: \n");
+        scanf("%d", &preco);
+        printf("Insira o quantidade do pedido: \n");
+        scanf("%d", &quantidade);
+        printf("--------------------------------");
+
+        resultado = resultado+(preco*quantidade);
+
+    }while(1);
+    printf("preco total: %d", resultado);
 */
+//Exercicio 6:
+float peso, peso_total=0,idade=0,idade_total=0;
+int estado_civil, pessoas=0, casadas=0, solteiras=0, separadas=0, viuvas=0;
+char sexo[2];
+
+do{
+    printf("Insira a sua idade: \n");
+    scanf("%d", &idade);
+    if(idade==0){
+        break;
+    }
+    printf("Insira o seu peso: \n");
+    scanf("%f", &peso);
+    fflush(stdin);
+
+    printf("Insira o seu sexo(M/F): \n");
+    fgets(sexo, 2, stdin);
+    fflush(stdin);
+
+    printf("Insira seu estado civil: \n");
+    printf("1- Casado \n");
+    printf("2- Solteiro \n");
+    printf("3- Separadas \n");
+    printf("4- Viuvas \n");
+    scanf("%d", &estado_civil);
+    switch(estado_civil){
+    case 1:
+        casadas++;
+        break;
+    case 2:
+        solteiras++;
+        break;
+    case 3:
+        separadas++;
+        break;
+    case 4:
+        viuvas++;
+        break;
+    }
+
+pessoas++;
+idade_total=idade_total+idade;
+peso_total=peso_total+peso;
+}while(1);
+
+printf("Numero de casados: %d\n", casadas);
+printf("Numero de solteiros: %d\n", solteiras);
+printf("Numero de separados: %d\n", separadas);
+printf("Numero de viuvos: %d\n", viuvas);
+printf("Media de idade: %f\n",idade_total/pessoas);
+printf("Media de peso: %f\n",peso_total/pessoas);
+
+    return 0;
+
 }
-
-
-
-
