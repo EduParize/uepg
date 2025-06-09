@@ -1,210 +1,171 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
-
 /*
-Lista 6.1
 Autor: Eduardo Parize
 RA: 25075923
+Lista: 14
 */
-
-int main()
-{
+int main() {
 //Exercicio 1:
 /*
-float num1, num2, num3;
-int opcao;
-float geometrica, ponderada, harmonica, aritmetica;
+    char x[30];
+    int tamanho_string, i;
+    printf("Insira uma string para ser invertida: \n");
+    fgets (x, 30, stdin);
+    tamanho_string=strlen(x);
 
-printf("Insira o valor do primeiro numero: \n");
-scanf("%f", &num1);
-printf("Insira o valor do segundo numero: \n");
-scanf("%f", &num2);
-printf("Insira o valor do terceiro numero: \n");
-scanf("%f", &num3);
-
-printf("------------\n1- Media geometrica\n2- Media ponderada\n3- Media harmonica\n4- Media aritmetica\n\nEscolha uma opcao:\n------------\n");
-scanf("%d", &opcao);
-
-switch(opcao){
-case 1:
-    geometrica = cbrt(num1*num2*num3);
-    printf("%.2f", geometrica);
-    break;
-case 2:
-    ponderada= (num1+2*num2+3*num3)/6;
-    printf("%.2f", ponderada);
-    break;
-case 3:
-    harmonica= 1/((1/num1)+(1/num2)+(1/num3));
-    printf("%.2f", harmonica);
-    break;
-case 4:
-    aritmetica= (num1+num2+num3)/3;
-    printf("%.2f", aritmetica);
-    break;
-}
+    for(i=tamanho_string;i>=0;i--){
+        printf("%c", x[i]);
+    }
 */
 //Exercicio 2:
 /*
-int i;
-printf("Insira um numero: \n");
-scanf("%d", &i);
+    char string_original[30], string_invertida[30];
+    int tamanho_string, i, j;
+    printf("Insira uma string para ser invertida: \n");
+    fgets (string_original, 30, stdin);
+    fflush(stdin);
+    tamanho_string=strlen(string_original);
+    j=tamanho_string-1;
 
-switch(i){
-case 1:
-    printf("Domingo\n");
-    break;
-case 2:
-    printf("Segunda-feira\n");
-    break;
-case 3:
-    printf("Terca-feira\n");
-    break;
-case 4:
-    printf("Quarta-feira\n");
-    break;
-case 5:
-    printf("Quinta-feira\n");
-    break;
-case 6:
-    printf("Sexta-feira\n");
-    break;
-case 7:
-    printf("Sabado\n");
-    break;
-default:
-    printf("Numero invalido");
-    break;
-}
+    for(i=0;i<=tamanho_string;i++){
+        string_invertida[j]=string_original[i];
+        j--;
+
+    }
+    strcpy(string_original,string_invertida);
+    fputs(string_original, stdout);
 */
 //Exercicio 3:
 /*
-int opcao;
-float i, j, resultado;
-printf("---------------");
-printf("Escolha uma opcao:\n");
-printf("1- Soma\n");
-printf("2- Substracao\n");
-printf("3- Multiplicacao\n");
-printf("4- Divisao\n");
-printf("---------------\n");
-scanf("%d", &opcao);
+char string[30], substituicao;
+int numero_vogais=0, comprimento, i;
 
-printf("Insira o valor do primeiro numero: \n");
-scanf("%f", &i);
-printf("Insira o valor do segundo numero: \n");
-scanf("%f", &j);
+printf("Insira uma string : \n");
+fgets (string, 30, stdin);
+fflush(stdin);
 
-switch(opcao){
-case 1:
-    resultado= i+j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 2:
-    resultado= i-j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 3:
-    resultado= i*j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 4:
-    resultado= i/j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-default:
-    printf("Insira um numero valido:\n");
-    break;
+printf("Insira um caracter que devera substituir as vogais: \n");
+scanf("%c", &substituicao);
+comprimento = strlen(string);
+for(i=0;i<=comprimento;i++){
+    if(string[i]== 'a'||string[i]=='e'||string[i]=='i'||string[i]=='o'||string[i]=='u'){
+        numero_vogais++;
+        string[i]=substituicao;
+    }
 }
+printf("O numero de vogais na string eh: %d\n", numero_vogais);
+fputs(string, stdout);
 */
 //Exercicio 4:
 /*
-float valor, preco_final;
-char estado;
+char string[50];
+int i, j, flag=1, comprimento;
 
-printf("Insira o valor do produto:\n");
-scanf("%f", &valor);
-fflush(stdin);
+printf("Insira uma string: \n");
+fgets(string, sizeof(string), stdin);
+string[strcspn(string, "\n")] = '\0';
 
-printf("------------\n");
-printf("MG - m\n");
-printf("SP - s\n");
-printf("RJ - r\n");
-printf("MS - n\n");
-printf("------------\n");
-printf("Insira estado:\n");
-scanf("%c", &estado);
+comprimento=strlen(string)-1;
 
-switch(estado){
-case 'm':
-    preco_final= valor*1.07;
-    break;
-case 's':
-    preco_final= valor*1.12;
-    break;
-case 'r':
-    preco_final= valor*1.15;
-    break;
-case 'n':
-    preco_final= valor*1.08;
-    break;
-default:
-    printf("Erro!\n");
-    break;
+for(i=0;i<comprimento;i++){
+    if(string[i]!=string[comprimento]){
+        flag=0;
+        break;
+    }
+    comprimento--;
 }
-printf("Valor final: %.2f", preco_final);
+if(flag==1){
+    printf("A palavra eh um palindromo!");
+} else{
+    printf("A palavra nao eh um palindromo!");
+}
 */
 //Exercicio 5:
 /*
-int i;
-printf("Insira um numero: \n");
-scanf("%d", &i);
+char string1[50], string2[50], *flag;
+int i, j;
 
-switch(i){
-case 1:
-    printf("Janeiro\n");
-    break;
-case 2:
-    printf("Fevereiro\n");
-    break;
-case 3:
-    printf("Marco\n");
-    break;
-case 4:
-    printf("Abril\n");
-    break;
-case 5:
-    printf("Maio\n");
-    break;
-case 6:
-    printf("Junho\n");
-    break;
-case 7:
-    printf("Julho\n");
-    break;
-case 8:
-    printf("Agosto\n");
-    break;
-case 9:
-    printf("Setembro\n");
-    break;
-case 10:
-    printf("Outubro\n");
-    break;
-case 11:
-    printf("Novembro\n");
-    break;
-case 12:
-    printf("Dezembro\n");
-    break;
-default:
-    printf("Numero invalido!\n");
-}
+printf("Insira a primeira string: \n");
+fgets(string1, sizeof(string1), stdin);
+string1[strcspn(string1, "\n")] = '\0';
+
+printf("Insira a segunda string: \n");
+fgets(string2, sizeof(string2), stdin);
+string2[strcspn(string2, "\n")] = '\0';
+
+flag = strstr(string1, string2);
+
+
+
+if(flag){
+    printf("A segunda palavra ESTA dentro da primeira");
+    }else{
+        printf("A segunda palavra NAO esta dentro da primeira");
+    }
 */
+//Exercicio 7:
+/*
+char string1[50];
+int i, comprimento, ascii;
+
+printf("Insira uma string: \n");
+fgets(string1, sizeof(string1), stdin);
+string1[strcspn(string1, "\n")] = '\0';
+comprimento = strlen(string1)-1;
+
+for(i=0;i<=comprimento;i++){
+ascii=(int)string1[i];
+
+if (ascii>=97 && ascii<=122){
+    ascii=ascii-32;
+    string1[i]=(char)ascii;
 }
 
+}
+fputs(string1, stdout);
+*/
+//Exercicio 8:
+/*
+char string1[50];
+int i, comprimento, ascii;
 
+printf("Insira uma string: \n");
+fgets(string1, sizeof(string1), stdin);
+string1[strcspn(string1, "\n")] = '\0';
+comprimento = strlen(string1)-1;
 
+for(i=0;i<=comprimento;i++){
+ascii=(int)string1[i];
 
+if (ascii>=65 && ascii<=90){
+    ascii=ascii+32;
+    string1[i]=(char)ascii;
+}
+
+}
+fputs(string1, stdout);
+*/
+//Exercicio 9:
+/*
+char nome_produto[50];
+int valor, valor_final, desconto;
+
+printf("Insira o nome do produto: \n");
+fgets(nome_produto, 50, stdin);
+
+printf("Insira o valor do produto: \n");
+scanf("%d", &valor);
+desconto=valor*0.1;
+valor_final=valor-desconto;
+
+printf("Nome: %s\n", nome_produto);
+printf("Valor: %d reais\n", valor);
+printf("Desconto: %d reais\n", desconto);
+printf("Valor a ser pago a vista: %d reais\n", valor_final);
+*/
+//Exercicio 10:
+
+return 0;
+}
