@@ -1,210 +1,145 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <string.h>
-
 /*
-Lista 6.1
 Autor: Eduardo Parize
-RA: 25075923
+RA: 25975923
+Lista: Structs
 */
 
-int main()
-{
+int main(){
 //Exercicio 1:
 /*
-float num1, num2, num3;
-int opcao;
-float geometrica, ponderada, harmonica, aritmetica;
+    typedef struct pessoa{
+char nome[40];
+int idade;
+char endereco[50];
+}pessoa;
 
-printf("Insira o valor do primeiro numero: \n");
-scanf("%f", &num1);
-printf("Insira o valor do segundo numero: \n");
-scanf("%f", &num2);
-printf("Insira o valor do terceiro numero: \n");
-scanf("%f", &num3);
+pessoa j;
+    printf("Insira o nome do jogado: ");
+    fgets(j.nome,40,stdin);
+      fflush(stdin);
+    printf("Insira a idade do jogado: ");
+    scanf("%d", &j.idade);
+    printf("Insira o endereco do jogado: ");
+    fflush(stdin);
+    fgets(j.endereco,50,stdin);
 
-printf("------------\n1- Media geometrica\n2- Media ponderada\n3- Media harmonica\n4- Media aritmetica\n\nEscolha uma opcao:\n------------\n");
-scanf("%d", &opcao);
-
-switch(opcao){
-case 1:
-    geometrica = cbrt(num1*num2*num3);
-    printf("%.2f", geometrica);
-    break;
-case 2:
-    ponderada= (num1+2*num2+3*num3)/6;
-    printf("%.2f", ponderada);
-    break;
-case 3:
-    harmonica= 1/((1/num1)+(1/num2)+(1/num3));
-    printf("%.2f", harmonica);
-    break;
-case 4:
-    aritmetica= (num1+num2+num3)/3;
-    printf("%.2f", aritmetica);
-    break;
-}
+    printf("%s \n%d \n%s",j.nome, j.idade, j.endereco);
 */
 //Exercicio 2:
 /*
-int i;
-printf("Insira um numero: \n");
-scanf("%d", &i);
+    typedef struct coordenadas{
+    float x;
+    float y;
+    }coordenadas;
+    coordenadas ponto;
 
-switch(i){
-case 1:
-    printf("Domingo\n");
-    break;
-case 2:
-    printf("Segunda-feira\n");
-    break;
-case 3:
-    printf("Terca-feira\n");
-    break;
-case 4:
-    printf("Quarta-feira\n");
-    break;
-case 5:
-    printf("Quinta-feira\n");
-    break;
-case 6:
-    printf("Sexta-feira\n");
-    break;
-case 7:
-    printf("Sabado\n");
-    break;
-default:
-    printf("Numero invalido");
-    break;
-}
-*/
+    float distancia;
+    printf("Insira o valor da coordenadas X do ponto: \n");
+    scanf("%f", &ponto.x);
+     printf("Insira o valor da coordenadas Y do ponto: \n");
+    scanf("%f", &ponto.y);
+
+    distancia = sqrt(ponto.x*ponto.x+ponto.y*ponto.y);
+    printf("A distancia eh: %.2f u.d", distancia);
+    */
 //Exercicio 3:
 /*
-int opcao;
-float i, j, resultado;
-printf("---------------");
-printf("Escolha uma opcao:\n");
-printf("1- Soma\n");
-printf("2- Substracao\n");
-printf("3- Multiplicacao\n");
-printf("4- Divisao\n");
-printf("---------------\n");
-scanf("%d", &opcao);
+    typedef struct coordenadas{
+    float x;
+    float y;
+    }coordenadas;
+    coordenadas ponto1, ponto2;
+    float distancia;
 
-printf("Insira o valor do primeiro numero: \n");
-scanf("%f", &i);
-printf("Insira o valor do segundo numero: \n");
-scanf("%f", &j);
+    printf("Insira o valor da coordenadas X do ponto 1: \n");
+    scanf("%f", &ponto1.x);
+     printf("Insira o valor da coordenadas Y do ponto 1: \n");
+    scanf("%f", &ponto1.y);
 
-switch(opcao){
-case 1:
-    resultado= i+j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 2:
-    resultado= i-j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 3:
-    resultado= i*j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-case 4:
-    resultado= i/j;
-    printf("Resultado: %.2f\n", resultado);
-    break;
-default:
-    printf("Insira um numero valido:\n");
-    break;
-}
+    printf("Insira o valor da coordenadas X do ponto 2: \n");
+    scanf("%f", &ponto2.x);
+     printf("Insira o valor da coordenadas Y do ponto 2: \n");
+    scanf("%f", &ponto2.y);
+
+    distancia = sqrt(pow(ponto1.x-ponto2.x, 2)+pow(ponto1.y-ponto2.y, 2));
+
+    printf("%.2f", distancia);
 */
 //Exercicio 4:
 /*
-float valor, preco_final;
-char estado;
+     typedef struct ponto{
+    float x;
+    float y;
+    }ponto;
 
-printf("Insira o valor do produto:\n");
-scanf("%f", &valor);
-fflush(stdin);
+  typedef struct retangulo{
+    ponto superior;
+    ponto inferior;
+    }retangulo;
+    float diagonal, perimetro, area;
+    retangulo r;
 
-printf("------------\n");
-printf("MG - m\n");
-printf("SP - s\n");
-printf("RJ - r\n");
-printf("MS - n\n");
-printf("------------\n");
-printf("Insira estado:\n");
-scanf("%c", &estado);
+    printf("Insira o valor da coordenadas X do ponto superior esquerdo: \n");
+    scanf("%f", &r.superior.x);
+     printf("Insira o valor da coordenadas Y do ponto superior esquerdo: \n");
+    scanf("%f", &r.superior.y);
 
-switch(estado){
-case 'm':
-    preco_final= valor*1.07;
-    break;
-case 's':
-    preco_final= valor*1.12;
-    break;
-case 'r':
-    preco_final= valor*1.15;
-    break;
-case 'n':
-    preco_final= valor*1.08;
-    break;
-default:
-    printf("Erro!\n");
-    break;
-}
-printf("Valor final: %.2f", preco_final);
-*/
+    printf("Insira o valor da coordenadas X do ponto inferior direito: \n");
+    scanf("%f", &r.inferior.x);
+     printf("Insira o valor da coordenadas Y do ponto inferior direito: \n");
+    scanf("%f", &r.inferior.y);
+
+    perimetro=(((r.inferior.x)-(r.superior.x))+((r.superior.y)-(r.inferior.y)))*2;
+    area=((r.inferior.x)-(r.superior.x))*((r.superior.y)-(r.inferior.y));
+    diagonal=sqrt(pow((r.inferior.x)-(r.superior.x),2)+(pow((r.inferior.y)-(r.superior.y),2)));
+
+    printf("Perimetro: %.2f\nArea: %.2f\nDiagonal: %.2f",perimetro, area, diagonal);
+    */
 //Exercicio 5:
 /*
-int i;
-printf("Insira um numero: \n");
-scanf("%d", &i);
+  typedef struct ponto{
+    float x;
+    float y;
+    }ponto;
 
-switch(i){
-case 1:
-    printf("Janeiro\n");
-    break;
-case 2:
-    printf("Fevereiro\n");
-    break;
-case 3:
-    printf("Marco\n");
-    break;
-case 4:
-    printf("Abril\n");
-    break;
-case 5:
-    printf("Maio\n");
-    break;
-case 6:
-    printf("Junho\n");
-    break;
-case 7:
-    printf("Julho\n");
-    break;
-case 8:
-    printf("Agosto\n");
-    break;
-case 9:
-    printf("Setembro\n");
-    break;
-case 10:
-    printf("Outubro\n");
-    break;
-case 11:
-    printf("Novembro\n");
-    break;
-case 12:
-    printf("Dezembro\n");
-    break;
-default:
-    printf("Numero invalido!\n");
-}
+  typedef struct retangulo{
+    ponto superior;
+    ponto inferior;
+    }retangulo;
+    float diagonal, perimetro, area;
+
+    retangulo r;
+    ponto p;
+
+    printf("Insira o valor da coordenadas X do ponto superior esquerdo: \n");
+    scanf("%f", &r.superior.x);
+     printf("Insira o valor da coordenadas Y do ponto superior esquerdo: \n");
+    scanf("%f", &r.superior.y);
+
+    printf("Insira o valor da coordenadas X do ponto inferior direito: \n");
+    scanf("%f", &r.inferior.x);
+     printf("Insira o valor da coordenadas Y do ponto inferior direito: \n");
+    scanf("%f", &r.inferior.y);
+
+    printf("Insira o valor da coordenadas X do ponto : \n");
+    scanf("%f", &p.x);
+     printf("Insira o valor da coordenadas Y do ponto : \n");
+    scanf("%f", &p.y);
+
+    if(p.x<=r.inferior.x && p.x>=r.superior.x &&p.y<=r.superior.y&&p.y>=r.inferior.y){
+        printf("O ponto esta dentro do retangulo");
+    }else{
+    printf("O ponto NAO esta dentro do retangulo");
+    }
 */
+//Exercicio 6:
+typedef struct aluno{
+char nome[40];
+int nota[3];
+int matricula;
+}aluno;
+aluno aluno1, aluno2, aluno3;
 }
-
-
-
-
